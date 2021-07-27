@@ -11,20 +11,20 @@ require_once('config.php');
 
 <div>
 	<?php
-	
-	?>	
+
+	?>
 </div>
 
 <div>
 	<form action="registration.php" method="post">
 		<div class="container">
-			
+
 			<div class="row">
 				<div class="col-sm-3">
 					<h1>Registration</h1>
 					<p>Fill up the form with correct values.</p>
 					<hr class="mb-3">
-					<label for="firstname"><b>First Name</b></label>
+					<label for="firstname"><b>Full Name</b></label>
 					<input class="form-control" id="firstname" type="text" name="firstname" required>
 
 					<label for="lastname"><b>Last Name</b></label>
@@ -40,6 +40,37 @@ require_once('config.php');
 					<input class="form-control" id="password"  type="password" name="password" required>
 					<hr class="mb-3">
 					<input class="btn btn-primary" type="submit" id="register" name="create" value="Sign Up">
+
+					<label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <label for="DOB"><b>DOB</b></label>
+    <input type="text" placeholder="Enter DOB" name="DOB" required>
+
+    <form action="/action_page.php">
+  <p>Please select your Gender:</p>
+  <input type="radio" id="male" name="fav_language" value="MALE">
+  <label for="MALE">MALE</label><br>
+  <input type="radio" id="female" name="fav_language" value="FEMALE">
+  <label for="FEMALE">FEMALE</label><br>
+  <input type="radio" id="" name="fav_language" value="n/a">
+  <label for="n/a">I Did't Prefer To Answer</label>
+<br>
+<br>
+
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
 				</div>
 			</div>
 		</div>
@@ -61,9 +92,9 @@ require_once('config.php');
 			var email 		= $('#email').val();
 			var phonenumber = $('#phonenumber').val();
 			var password 	= $('#password').val();
-			
 
-				e.preventDefault();	
+
+				e.preventDefault();
 
 				$.ajax({
 					type: 'POST',
@@ -75,7 +106,7 @@ require_once('config.php');
 								'text': data,
 								'type': 'success'
 								})
-							
+
 					},
 					error: function(data){
 						Swal.fire({
@@ -86,20 +117,20 @@ require_once('config.php');
 					}
 				});
 
-				
+
 			}else{
-				
+
 			}
 
-			
 
 
 
-		});		
 
-		
+		});
+
+
 	});
-	
+
 </script>
 </body>
 </html>
